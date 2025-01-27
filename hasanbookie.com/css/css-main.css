@@ -1,10 +1,12 @@
 .open-sans-custom {
   font-family: "Open Sans", serif;
   font-optical-sizing: auto;
-  font-weight: 400;  /* Replace with a value between 300 and 800 */
+  font-weight: 400;
+  /* Replace with a value between 300 and 800 */
   font-style: normal;
   font-variation-settings: "wdth" 100;
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -179,11 +181,26 @@ body {
 .lb_slider {
   width: 100%;
   overflow: hidden;
-  background: url("../photos/background1.jpg") no-repeat center center;
+  background: url("../images/background1.jpg") no-repeat center center;
   background-size: cover;
   padding: 0;
   position: relative;
 }
+
+/* Adding a dark overlay to adjust the brightness */
+.lb_slider::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  /* Dark overlay, change the alpha for different brightness */
+  z-index: 1;
+  /* Ensure the overlay is above the background but below content */
+}
+
 
 .lb_slider .main {
   max-width: 100%;
@@ -630,8 +647,7 @@ body {
 .lb_walb {
   width: 100%;
   padding: 150px 15px;
-  background: transparent url("../photos/background2.jpg") no-repeat center
-    center;
+  background: transparent url("../images/background2.jpg") no-repeat center center;
   background-size: cover;
   overflow: hidden;
   position: relative;
@@ -761,13 +777,15 @@ body {
 
 .lb_parnter {
   width: 100%;
+  height: auto;
   position: relative;
   padding: 110px 0;
-  background: transparent url("../images/images-bg2.jpg") no-repeat center
-    center;
+  background: transparent url("../images/background5.webp") no-repeat center center;
   background-size: cover;
   overflow: hidden;
 }
+
+
 
 .lb_parnter .main {
   max-width: 1190px;
@@ -828,11 +846,7 @@ body {
   justify-content: space-between;
 }
 
-.lb_parnter
-  .lb_partner_wrap
-  .lb_partner_wrap_inn
-  .flip-box-front
-  .lb_partner_logo {
+.lb_parnter .lb_partner_wrap .lb_partner_wrap_inn .flip-box-front .lb_partner_logo {
   max-width: 200px;
   align-self: center;
   max-height: 84px;
@@ -1560,6 +1574,7 @@ body {
   left: 30%;
   top: 34%;
 }
+
 .flip-box-front img {
   width: 150px;
   margin: auto;
@@ -1569,62 +1584,136 @@ body {
 
 
 .footer {
-    background-color: #222;  /* Dark background for contrast */
-    color: #f8f8f8;           /* Lighter text color for readability */
-    padding: 40px 20px;       /* Generous padding */
-    text-align: center;
-    font-family: 'Arial', sans-serif;
+  background-color: #222;
+  /* Dark background for contrast */
+  color: #f8f8f8;
+  /* Lighter text color for readability */
+  padding: 40px 20px;
+  /* Generous padding */
+  text-align: center;
+  font-family: 'Arial', sans-serif;
 }
 
 /* Footer Content Wrapper */
 .footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 0;
 }
 
 /* Social Media Icons */
 .footer-social a {
-    margin: 0 15px;
-    display: inline-block;
+  margin: 0 15px;
+  display: inline-block;
 }
 
 .footer-social img {
-    width: 45px;
-    height: 45px;
-    object-fit: cover;
-    transition: all 0.3s ease;
+  width: 45px;
+  height: 45px;
+  object-fit: cover;
+  transition: all 0.3s ease;
 }
 
 /* Hover Effects for Social Media Icons */
 .footer-social img:hover {
-    transform: scale(1.15);  /* Smooth zoom effect */
-    opacity: 0.8;            /* Slight opacity change */
+  transform: scale(1.15);
+  /* Smooth zoom effect */
+  opacity: 0.8;
+  /* Slight opacity change */
 }
 
 /* Footer Text Styling */
 .footer p {
-    font-size: 14px;
-    margin: 15px 0;
-    font-weight: 400;
+  font-size: 14px;
+  margin: 15px 0;
+  font-weight: 400;
 }
 
 /* Footer Links (e.g., Privacy Policy, Terms of Service) */
 .footer-links {
-    margin-top: 25px;
+  margin-top: 25px;
 }
 
 .footer-link {
-    color: #f8f8f8;
-    text-decoration: none;
-    font-size: 14px;
-    margin: 0 15px;
-    text-transform: uppercase;  /* For a more modern feel */
-    font-weight: 500;
-    transition: color 0.3s ease;
+  color: #f8f8f8;
+  text-decoration: none;
+  font-size: 14px;
+  margin: 0 15px;
+  text-transform: uppercase;
+  /* For a more modern feel */
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
 .footer-link:hover {
-    color: #ff9f00;  /* A bright color for hover effect */
-    text-decoration: underline;
+  color: #ff9f00;
+  /* A bright color for hover effect */
+  text-decoration: underline;
+}
+
+
+.ftr_section {
+  width: 100% !important;
+  padding: 40px 20px !important;
+  background-color: #000000 !important;
+}
+
+.ftr_title_section,
+.ftr_subtitle_section,
+.ftr_wa_section,
+.ftr_guide_section,
+.ftr_gs_section {
+  margin-bottom: 30px !important; /* Adds space between each section */
+}
+
+.ftr_title {
+  font-size: 30px !important;
+  font-weight: bold !important;
+}
+
+.ftr_logo {
+  height: 40px !important;
+  margin-left: 10px !important;
+}
+
+.ftr_subtitle_section h3 {
+  font-size: 24px !important;
+  color: #333 !important;
+}
+
+.ftr_subtitle_section p {
+  font-size: 16px !important;
+  color: #666 !important
+}
+
+.ftr_wa_section h2 {
+  font-size: 20px !important;
+}
+
+.ftr_walink a {
+  font-size: 18px !important;
+  color: #cc0000 !important;
+  text-decoration: none !important;
+}
+
+.ftr_guide_section h3 {
+  font-size: 20px !important;
+}
+
+.ftr_guide_section p {
+  font-size: 16px !important;
+}
+
+.ftr_gs_section a {
+  display: inline-block ;
+  background-color: #cc0000 !important;
+  color: #fef9f9 !important;
+  padding: 10px 20px !important;
+  font-size: 18px !important;
+  text-decoration: none !important;
+  border-radius: 5px !important;
+}
+
+.ftr_gs_section a:hover {
+  background-color: #005fa3 !important;
 }
